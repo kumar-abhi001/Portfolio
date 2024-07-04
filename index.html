@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <nav id="desktop-nav">
+    <div class="scroll-watcher"></div>
+    <nav id="desktop-nav" class="scroll-animation">
         <div class="logo">Abhishek Kumar</div>
         <div>
             <ul class="nav-links">
@@ -19,6 +20,10 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="theme-toggle">
+                    <input type="checkbox" id="dark-mode">
+                    <label for="dark-mode"></label>
+                </li>
             </ul>
         </div>
     </nav>
@@ -29,6 +34,8 @@
                 <span></span>
                 <span></span>
                 <span></span>
+                <span></span>
+                
             </div>
             <div class="menu-links">
                 <li><a href="#about" onclick="toggleMenu()">About</a></li>
@@ -38,8 +45,8 @@
             </div>
         </div>
     </nav>
-    <section id="profile">
-        <div class="section__pic-container">
+    <section id="profile" class="scroll-animation-fade-out">
+        <div class="section__pic-container" >
             <img src="./assets/profile-pic.png" alt="Abhishek Kumar profile picture" />
         </div>
         <div class="section__text">
@@ -55,29 +62,28 @@
                 </button>
             </div>
             <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon icon-glow"
                     onclick="window.open('https://www.linkedin.com/in/kumar-abhi001')" />
-                <img src="./assets/github.png" alt="My Github profile" class="icon"
+                <img src="./assets/github.png" alt="My Github profile" class="icon icon-glow"
                     onclick="window.open('https://github.com/kumar-abhi001')" />
             </div>
         </div>
     </section>
-    <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
+    <section id="about" class="scroll-animation-fade-in">
+        <div class="section-title scroll-animation-fade-in">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">About Me</h1>
+        </div>
         <div class="section-container">
-            <div class="section__pic-container">
-                <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" />
-            </div>
             <div class="about-details-container">
                 <div class="about-containers">
                     <div class="details-container">
-                        <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+                        <img src="./assets/experience.png" alt="Experience icon" class="icon icon-glow" />
                         <h3>Experience</h3>
                         <p>1+ years <br />MERN Developer</p>
                     </div>
                     <div class="details-container">
-                        <img src="./assets/education.png" alt="Education icon" class="icon" />
+                        <img src="./assets/education.png" alt="Education icon" class="icon icon-glow" />
                         <h3>Education</h3>
                         <p>B.Tech in Computer Science<br />From Lovely Professional University</p>
                     </div>
@@ -101,7 +107,7 @@
         </div>
         <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
     </section>
-    <section id="experience">
+    <section id="experience" class="scroll-animation-fade-in">
         <p class="section__text__p1">Explore My</p>
         <h1 class="title">Experience</h1>
         <div class="experience-details-container">
@@ -197,7 +203,7 @@
         </div>
         <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
     </section>
-    <section id="projects">
+    <section id="projects" class="scroll-animation-fade-in">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
         <div class="experience-details-container">
@@ -250,16 +256,16 @@
         </div>
         <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
     </section>
-    <section id="contact">
+    <section id="contact" class="scroll-animation-fade-in">
         <p class="section__text__p1">Get in Touch</p>
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
-                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon icon-glow" />
                 <p><a href="mailto:kumar.abhi.ok@gmail.com">kumar.abhi.ok@gmail.com</a></p>
             </div>
             <div class="contact-info-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon icon-glow" />
                 <p><a href="https://www.linkedin.com/in/kumar-abhi001">LinkedIn</a></p>
             </div>
         </div>

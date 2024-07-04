@@ -58,7 +58,9 @@
 }
 
 @media screen and (max-width: 600px) {
-
+    #about {
+        margin-top: 150px;
+    }
     #contact,
     footer {
         height: 40vh;
@@ -68,7 +70,6 @@
         height: 55vh;
         margin-bottom: 0;
     }
-
     article {
         font-size: 1rem;
     }
@@ -77,13 +78,16 @@
         height: fit-content;
         margin-bottom: 2rem;
     }
-
+    .section-title {
+        margin-bottom: 20px;
+    }
     .about-containers,
     .contact-info-upper-container,
     .btn-container {
         flex-wrap: wrap;
-    }
 
+    }
+    
     .contact-info-container {
         margin: 0;
     }
@@ -92,7 +96,6 @@
     .nav-links li a {
         font-size: 1rem;
     }
-
     .experience-sub-title {
         font-size: 1.25rem;
     }
@@ -125,3 +128,4 @@
         text-align: justify;
     }
 }
+

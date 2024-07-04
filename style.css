@@ -2,6 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+:root {
+    --primary-color: #fafafa;
+    --secondary-color: #242424;
+}
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +13,8 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    background-color: var(--primary-color);
+    transition: 0.5s;
 }
 
 html {
@@ -18,7 +24,10 @@ html {
 p {
     color: rgb(85, 85, 85);
 }
-
+.dark-theme {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
 /* TRANSITION */
 
 a,
@@ -46,7 +55,7 @@ nav {
 }
 
 a {
-    color: black;
+    color: var(--secondary-color);
     text-decoration: none;
     text-decoration-color: white;
 }
@@ -60,6 +69,7 @@ a:hover {
 
 .logo {
     font-size: 2rem;
+    color: var(--secondary-color);
 }
 
 .logo:hover {
@@ -197,6 +207,7 @@ section {
 .title {
     font-size: 3rem;
     text-align: center;
+    color: var(--secondary-color);
 }
 
 #socials-container {
@@ -206,13 +217,31 @@ section {
     gap: 1rem;
 }
 
+.text-container p {
+    color: var(--secondary-color);
+}
+
 /* ICONS */
 
 .icon {
     cursor: pointer;
     height: 2rem;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid white;
 }
 
+.icon-glow:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffee10;
+}
+
+.icon-glow:hover {
+    background-color: #ffee10;
+    color: #ffee10;
+    box-shadow: 0 0 10px #ffee10;
+    text-shadow: 0 0 5px #ffee10;
+}
 /* BUTTONS */
 
 .btn-container {
@@ -241,12 +270,17 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-    background: rgb(53, 53, 53);
-    color: white;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-color-2 {
+    color: var(--secondary-color);
 }
 
 .btn-color-1:hover {
     background: rgb(0, 0, 0);
+    color: var(--secondary-color);
 }
 
 .btn-color-2 {
@@ -429,4 +463,102 @@ footer {
 
 footer p {
     text-align: center;
+}
+
+
+.theme-toggle {
+    margin-top: 7px;
+}
+label {
+    position: relative;
+    width: 48px;
+    height: 22px;
+    display: block;
+    background: #d9d9d9;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.3), inset 0px -5px 15px rgba(255, 255, 255, 0.3);
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background: #f2f2f2;
+    border-radius: 100px;
+    top: 3px;
+    left: 5px;
+    transition: 0.5s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+input:checked~label:after {
+    left: 45px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+input:checked~label {
+    background: #242424;
+}
+
+
+input:checked+label+.background {
+    background: #242424;
+}
+
+input {
+    display: none;
+}
+
+
+/* Animation to Portfolio */
+
+.scroll-watcher {
+    height: 5px;
+    background-color: var(--secondary-color);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+    to { scale: 1 1;}
+}
+
+
+
+.scroll-animation-fade-in {
+    animation: fade-in 1s linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+@keyframes fade-in {
+    from {scale: 0.5; opacity: 0;}
+    to {scale: 1; opacity: 1;}
+}
+
+.scroll-animation-fade-out {
+    animation: fade-out ease-out;
+    animation-timeline: view();
+    animation-range: exit;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        /* Fully visible at the start of the animation */
+    }
+
+    100% {
+        opacity: 0;
+        /* Fully invisible at the end of the animation */
+    }
 }
