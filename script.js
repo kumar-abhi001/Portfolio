@@ -1,3 +1,6 @@
+
+const year = document.querySelector(".year");
+year.innerHTML = new Date().getFullYear();
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -24,5 +27,4 @@ function darkMode(isDarkMode) {
   document.documentElement.style.setProperty('--secondary-color', isDarkMode ? '#fafafa' : '#242424');
 }
 
-console.log(localStorage.getItem("theme"), "theme hai");
 darkMode(localStorage.getItem("theme") === "dark");
